@@ -14,9 +14,16 @@ export default function Home() {
           <h2 className="font-bold text-2xl my-6">ゲーム</h2>
           <Button
             className="mt-8 mb-6"
-            onClick={() => router.push("tic-tac-toe")}
+            onClick={() => router.push("/tic-tac-toe")}
           >
             三目並べ
+          </Button>
+          <h2 className="font-bold text-2xl my-6">クイズ</h2>
+          <Button
+            className="mt-8 mb-6"
+            onClick={() => router.push("/quiz/javascript")}
+          >
+            JavaScript
           </Button>
         </div>
       </div>
