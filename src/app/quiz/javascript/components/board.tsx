@@ -1,14 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// data
+import { Quiz, quizData } from "@/data/quiz/javascript/data";
+
+// javascript/components
 import QuizText from "./quiz-text";
 import NextButton from "./next-button";
-import { quizData } from "@/data/quiz/javascript/data";
 import Score from "./score";
 import ExplanationText from "./explanation-text";
 
+// hooks
+import { useShuffle } from "@/hooks/useShuffle";
+
 export const Board = () => {
   // 現在のクイズのインデックスを管理する状態
+  const [shuffledQuizzes, setShuffledQuizzes] = useState<Quiz[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   // 正解した数をカウントする状態
   const [score, setScore] = useState(0);
@@ -17,8 +25,17 @@ export const Board = () => {
   // フィードバックメッセージを管理する状態
   const [feedback, setFeedback] = useState<string | null>(null);
 
+  const shuffled = useShuffle(quizData);
+
+  useEffect(() => {
+    if (shuffled.length !== shuffledQuizzes.length) {
+      // shuffled と shuffledQuizzes が異なる場合のみ更新
+      setShuffledQuizzes(shuffled);
+    }
+  }, [shuffled, shuffledQuizzes]); // shuffled と shuffledQuizzes が更新された場合に実行
+
   // 現在のクイズ
-  const currentQuiz = quizData[currentIndex];
+  const currentQuiz = shuffledQuizzes[currentIndex];
 
   const handleAnswer = (index: number) => {
     // 正解の場合、スコアを加算
@@ -48,8 +65,15 @@ export const Board = () => {
     }
   };
 
+  if (!currentQuiz) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="">
+      <p className="text-right text-xs font-semibold text-gray-500">
+        問題 {currentIndex + 1} / {quizData.length}
+      </p>
       {isFinished ? (
         <Score quizData={quizData} score={score} />
       ) : (
