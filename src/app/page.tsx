@@ -18,13 +18,29 @@ export default function Home() {
           >
             三目並べ
           </Button>
+
+          {/* クイズ */}
           <h2 className="font-bold text-2xl my-6">クイズ</h2>
-          <Button
-            className="mt-8 mb-6"
-            onClick={() => router.push("/quiz/javascript")}
-          >
-            JavaScript
-          </Button>
+          <div className=" space-x-4">
+            <Button
+              className="mt-8 mb-6"
+              onClick={() => router.push("/quiz/javascript")}
+            >
+              JavaScript
+            </Button>
+            <Button
+              className="mt-8 mb-6"
+              onClick={() => router.push("/quiz/react.js")}
+            >
+              React.js
+            </Button>
+            <Button
+              className="mt-8 mb-6"
+              onClick={() => router.push("/quiz/next.js")}
+            >
+              Next.js
+            </Button>
+          </div>
         </div>
       </div>
     </div>
