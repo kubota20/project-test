@@ -5,11 +5,11 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { SideLogo } from "./ui/side-logo";
 
 /**
  * ダッシュボードサイドバーUI
@@ -48,9 +48,11 @@ const items = [
 const AppSidebar = () => {
   return (
     <Sidebar collapsible="icon">
-      <SidebarContent>
+      <SidebarContent className="relative">
+        {/* サイドバー用ロゴ */}
+        <SideLogo />
+
         <SidebarGroup>
-          <SidebarGroupLabel>ダッシュボード</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (

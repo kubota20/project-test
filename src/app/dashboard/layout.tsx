@@ -26,11 +26,9 @@ export default async function DashboardLayout({
   return (
     <SidebarProvider defaultOpen={defaultOpen}>
       <AppSidebar />
-      <main>
-        <TopHeader />
+      <TopHeader />
 
-        {children}
-      </main>
+      {children}
     </SidebarProvider>
   );
 }

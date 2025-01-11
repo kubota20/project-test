@@ -1,19 +1,37 @@
 "use client";
 
-import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
+import { Button } from "@/components/ui/button";
+import { OpenCloseWidget } from "./ui/open-close-widget";
+import { UserAvatar } from "./ui/user-avatar";
+import { Settings, CircleHelp } from "lucide-react";
+import { InputSearch } from "./ui/input-search";
 
 const TopHeader = () => {
-  const { toggleSidebar, open } = useSidebar();
-
   return (
-    <div>
-      <div className="flex items-center justify-center" onClick={toggleSidebar}>
-        <SidebarTrigger />
-        <span className={`text-sm cursor-pointer`}>
-          {open ? "閉じる" : "開く"}
-        </span>
+    <header className="w-full flex items-center justify-between p-1 h-12 border-b">
+      {/* サイドバーの表示・非表示 */}
+      <div className="">
+        <OpenCloseWidget />
       </div>
-    </div>
+
+      <div className="flex items-center">
+        {/* 検索 */}
+        <InputSearch />
+
+        {/* ヘルプボタン */}
+        <Button size="icon" variant="ghost">
+          <CircleHelp />
+        </Button>
+
+        {/* 設定ボタン */}
+        <Button size="icon" variant="ghost">
+          <Settings />
+        </Button>
+
+        {/* ユーザーボタン */}
+        <UserAvatar />
+      </div>
+    </header>
   );
 };
 
