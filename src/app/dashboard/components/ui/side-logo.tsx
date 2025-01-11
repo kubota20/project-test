@@ -6,7 +6,7 @@ export const SideLogo = () => {
   const { open } = useSidebar();
   return (
     <div
-      className={` ${
+      className={`max-sm:hidden ${
         open ? "bg-blue-400 aspect-video shadow-inner shadow-blue-600" : ""
       }`}
     >

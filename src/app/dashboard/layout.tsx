@@ -26,9 +26,10 @@ export default async function DashboardLayout({
   return (
     <SidebarProvider defaultOpen={defaultOpen}>
       <AppSidebar />
-      <TopHeader />
-
-      {children}
+      <div className="flex flex-col w-full">
+        <TopHeader />
+        {children}
+      </div>
     </SidebarProvider>
   );
 }
