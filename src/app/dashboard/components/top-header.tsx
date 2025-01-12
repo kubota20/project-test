@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { OpenCloseWidget } from "./ui/open-close-widget";
+import { OpenCloseWidget } from "./sidebar/open-close-widget";
 import { UserAvatar } from "./ui/user-avatar";
 import { Settings, CircleHelp } from "lucide-react";
-import { InputSearch } from "./ui/input-search";
+import { InputSearch } from "./header/input-search";
 
 const TopHeader = () => {
   return (

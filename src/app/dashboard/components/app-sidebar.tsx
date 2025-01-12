@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { SideLogo } from "./ui/side-logo";
+import { SideLogo } from "./sidebar/side-logo";
 
 /**
  * ダッシュボードサイドバーUI
