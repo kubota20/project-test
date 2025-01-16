@@ -42,9 +42,15 @@ export default function Home() {
               </Button>
               <Button
                 className="mt-8 text-xs font-bold p-2"
-                onClick={() => router.push("/quiz/next.js")}
+                onClick={() => router.push("/quiz/next13.js")}
               >
-                Next.js
+                Next.js 13
+              </Button>
+              <Button
+                className="mt-8 text-xs font-bold p-2"
+                onClick={() => router.push("/quiz/next14.js")}
+              >
+                Next.js 14
               </Button>
             </div>
           </div>

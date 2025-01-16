@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 // data
-import { Quiz, nextQuizData } from "@/data/quiz/next/data";
+import { Quiz, next14QuizData } from "@/data/quiz/next/data";
 
 // javascript/components
 import QuizText from "./quiz-text";
@@ -25,7 +25,7 @@ export const Board = () => {
   // フィードバックメッセージを管理する状態
   const [feedback, setFeedback] = useState<string | null>(null);
 
-  const shuffled = useShuffle(nextQuizData);
+  const shuffled = useShuffle(next14QuizData);
 
   useEffect(() => {
     if (shuffled.length !== shuffledQuizzes.length) {
@@ -57,7 +57,7 @@ export const Board = () => {
     setFeedback(null); // フィードバックをリセット
 
     // 次の問題がある場合、インデックスを進める
-    if (currentIndex < nextQuizData.length - 1) {
+    if (currentIndex < next14QuizData.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
       // 全ての問題が終了したら、クイズを終了
@@ -72,10 +72,10 @@ export const Board = () => {
   return (
     <div className="">
       <p className="text-right text-xs font-semibold text-gray-500">
-        問題 {currentIndex + 1} / {nextQuizData.length}
+        問題 {currentIndex + 1} / {next14QuizData.length}
       </p>
       {isFinished ? (
-        <Score quizData={nextQuizData} score={score} />
+        <Score quizData={next14QuizData} score={score} />
       ) : (
         <div>
           {feedback ? (
