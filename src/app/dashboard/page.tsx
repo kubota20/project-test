@@ -5,6 +5,7 @@ import { UserChart } from "./components/chart/user-chart";
 
 import { AllData, userData } from "@/data/dashboard/user/data";
 import { TimeFrames } from "./components/chart/time-frames";
+import { PieCharts } from "./components/chart/pie-charts";
 
 const DashboardPage = () => {
   const [timeframe, setTimeframe] = useState<keyof AllData>("week");
@@ -20,11 +21,11 @@ const DashboardPage = () => {
   };
 
   return (
-    <div className="mt-6 py-6 px-8">
+    <div className="mt-6 py-6 px-8 space-y-4">
       {/* ユーザー数の推移 */}
       <div className="border-2 p-2">
         <div className="flex items-center justify-between">
-          <p className="pl-20 text-gray-500 text-sm">ユーザー数の推移</p>
+          <p className="text-gray-500 text-sm">ユーザー数の推移</p>
 
           {/*　年月日 選択  */}
           <div className="flex items-center justify-center">
@@ -35,6 +36,18 @@ const DashboardPage = () => {
         {/* ユーザーチャート */}
         <div className="w-full h-96">
           <UserChart data={chartData} />
+        </div>
+      </div>
+
+      <div className="flex  items-center justify-center space-x-4">
+        {/* 円グラフ */}
+        <div className="w-full h-72 border-2 p-2">
+          <p className="text-gray-500 text-sm">円グラフ１</p>
+          <PieCharts />
+        </div>
+        <div className="w-full h-72 border-2 p-2">
+          <p className="text-gray-500 text-sm">円グラフ2</p>
+          <PieCharts />
         </div>
       </div>
     </div>
