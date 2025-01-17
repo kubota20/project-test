@@ -70,6 +70,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* 管理者用 */}
+        <section className="border border-black shadow p-4 col-span-full">
+          <div className="text-center">
+            <h2 className="font-bold text-2xl my-2">管理者用</h2>
+            <p className="text-sm text-gray-500">管理者しか使用できません</p>
+            <div className=" space-x-4">
+              <Button
+                className="mt-8 text-xs font-bold p-2"
+                onClick={() => router.push("/admin")}
+              >
+                管理者
+              </Button>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
