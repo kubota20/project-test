@@ -79,9 +79,9 @@ export default function Home() {
             <div className=" space-x-4">
               <Button
                 className="mt-8 text-xs font-bold p-2"
-                onClick={() => router.push("/admin")}
+                onClick={() => router.push("/sign-in")}
               >
-                管理者
+                ログイン
               </Button>
             </div>
           </div>
