@@ -25,9 +25,9 @@ export const authOptions: NextAuthOptions = {
       const allowedEmails = [process.env.GitHub_EMAIL as string]; // 特定のメールアドレスを許可
       if (user.email && allowedEmails.includes(user.email)) {
         return true; // サインイン許可
+      } else {
+        return false; // サインイン拒否
       }
-
-      return false; // サインイン拒否
     },
     async session({ session, token }) {
       session.user.id = token.id;
