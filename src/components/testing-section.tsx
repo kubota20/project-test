@@ -1,4 +1,4 @@
-import { PathButton } from "./ui/path-button";
+import { PathButton } from "@/components/ui/path-button";
 
 const txetAction = [
   {
@@ -14,9 +14,7 @@ const TestingSection = () => {
         <h2 className="font-bold text-2xl my-2">機能テスト</h2>
         <div className="space-x-4">
           {txetAction.map((item) => (
-            <div key={item.text}>
-              <PathButton text={item.text} path={item.path} />
-            </div>
+            <PathButton key={item.text} text={item.text} path={item.path} />
           ))}
         </div>
       </div>

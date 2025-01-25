@@ -13,9 +13,7 @@ const GameSection = () => {
       <div className="text-center">
         <h2 className="font-bold text-2xl my-2">ゲーム</h2>
         {txetAction.map((item) => (
-          <div key={item.text}>
-            <PathButton text={item.text} path={item.path} />
-          </div>
+          <PathButton key={item.text} text={item.text} path={item.path} />
         ))}
       </div>
     </section>
