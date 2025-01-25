@@ -1,92 +1,28 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
+import AdminSection from "@/components/admin-section";
+// components
+import GameSection from "@/components/game-section";
+import QuizSection from "@/components/quiz-section";
+import TestingSection from "@/components/testing-section";
 
 export default function Home() {
-  const router = useRouter();
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="font-bold text-3xl my-8">練習用</h1>
 
       <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-3">
         {/* ゲーム */}
-        <section className="border border-black shadow p-4">
-          <div className="text-center">
-            <h2 className="font-bold text-2xl my-2">ゲーム</h2>
-            <Button
-              className="mt-8 text-xs font-bold p-2"
-              onClick={() => router.push("/tic-tac-toe")}
-            >
-              三目並べ
-            </Button>
-          </div>
-        </section>
+        <GameSection />
 
         {/* クイズ */}
-        <section className="border border-black shadow p-4">
-          <div className="text-center">
-            <h2 className="font-bold text-2xl my-2">クイズ</h2>
-            <div className=" space-x-4">
-              <Button
-                className="mt-8 text-xs font-bold p-2"
-                onClick={() => router.push("/quiz/javascript")}
-              >
-                JavaScript
-              </Button>
-              <Button
-                className="mt-8 text-xs font-bold p-2"
-                onClick={() => router.push("/quiz/react.js")}
-              >
-                React.js
-              </Button>
-              <Button
-                className="mt-8 text-xs font-bold p-2"
-                onClick={() => router.push("/quiz/next13.js")}
-              >
-                Next.js 13
-              </Button>
-              <Button
-                className="mt-8 text-xs font-bold p-2"
-                onClick={() => router.push("/quiz/next14.js")}
-              >
-                Next.js 14
-              </Button>
-            </div>
-          </div>
-        </section>
+        <QuizSection />
 
         {/* 機能テスト */}
-        <section className="border border-black shadow p-4 col-span-full">
-          <div className="text-center">
-            <h2 className="font-bold text-2xl my-2">機能テスト</h2>
-            <div className=" space-x-4">
-              <Button
-                className="mt-8 text-xs font-bold p-2"
-                onClick={() => router.push("/dashboard")}
-              >
-                ダッシュボード
-              </Button>
-            </div>
-          </div>
-        </section>
+        <TestingSection />
 
         {/* 管理者用 */}
-        <section className="border border-black shadow p-4 col-span-full">
-          <div className="text-center">
-            <h2 className="font-bold text-2xl my-2">管理者用</h2>
-            <p className="text-sm text-gray-500">管理者しか使用できません</p>
-            <div className="space-x-4">
-              <Button
-                className="mt-8 text-xs font-bold p-2"
-                onClick={() => signIn("github")}
-              >
-                ログイン
-              </Button>
-            </div>
-          </div>
-        </section>
+        <AdminSection />
       </div>
     </div>
   );
