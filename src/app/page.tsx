@@ -9,18 +9,20 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center">
       <h1 className="font-bold text-3xl my-8">練習用</h1>
 
-      <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-3 w-full p-3">
-        {/* ゲーム */}
-        <GameSection />
+      <div className="container">
+        <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-3 p-3">
+          {/* ゲーム */}
+          <GameSection />
 
-        {/* クイズ */}
-        <QuizSection />
+          {/* クイズ */}
+          <QuizSection />
 
-        {/* 機能テスト */}
-        <TestingSection />
+          {/* 機能テスト */}
+          <TestingSection />
 
-        {/* 管理者用 */}
-        <AdminSection />
+          {/* 管理者用 */}
+          <AdminSection />
+        </div>
       </div>
     </div>
   );
