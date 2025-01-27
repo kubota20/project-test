@@ -13,7 +13,7 @@ const txetAction = {
     "@prisma/client",
   ],
   description:
-    "管理者用ページです。prisma でテーブル作成、データペースは Neon Postgres を使用 next-auth のGitHub認証機能を使っています。(Neon Postgres の無利用枠の使用期間は14日の為、変更を考えています。)",
+    "管理者用ページです。prisma でテーブル作成、ストレージサービスでは Neon Postgres を使用 next-auth のGitHub認証機能を使っています。(Neon Postgres の無利用枠の使用期間は14日の為、変更を考えています。)",
 };
 
 const AdminSection = () => {
