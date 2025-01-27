@@ -20,20 +20,24 @@ export const HelpIcon = ({ title, packages, description }: HelpIconProps) => {
       <HoverCardTrigger>
         <CircleHelp />
       </HoverCardTrigger>
-      <HoverCardContent>
+      <HoverCardContent className="text-center">
         <p className="text-lg font-extrabold">{title}</p>
         <p className="border-b border-gray-500 my-2" />
-        <p className="mb-2">パッケージ一覧</p>
+        <p className="mb-2 text-sm font-bold">パッケージ一覧</p>
         <ul>
           {Array.isArray(packages) && packages.length > 0 ? (
-            packages.map((pkg, index) => <li key={index}>{pkg}</li>)
+            packages.map((pkg, index) => (
+              <li key={index} className="text-xs">
+                {pkg}
+              </li>
+            ))
           ) : (
             <li>特になし</li>
           )}
         </ul>
         <p className="border-b border-gray-500 my-2" />
-        <p className="mb-2">使用方法</p>
-        <p className="text-wrap text-start">{description}</p>
+        <p className="mb-2 text-sm font-bold">説明</p>
+        <p className="text-wrap text-start text-xs">{description}</p>
       </HoverCardContent>
     </HoverCard>
   );
